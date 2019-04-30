@@ -3,8 +3,8 @@ import fetch from 'isomorphic-fetch';
 
 export default class Doctor extends React.Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             data: [],
             selected: 1
@@ -12,34 +12,39 @@ export default class Doctor extends React.Component {
     }
     
     componentDidMount() {
-        fetch('/doctor.json')
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            this.setState({ data: data })
+        this.fetchDate()
+    }
+
+    fetchDate = async () => {
+        const data = await fetch('/doctor.json')
+            .then(response => response.json())
+            .catch(error => console.log(error));
+
+        this.setState({
+            data: data
         })
-        .catch(error => console.log(error));
     }
 
-    handleChange() {
-        this.setState({ selected: this.state.data.key });
+    handleChange = (event) => {
+        this.setState({ selected: event.target.value });
+        console.log(this.state.selected)
+        console.log(this.state.data.firstName)
     }
-
 
     render() {
         return (
             <div>
                 <select onChange={this.handleChange}>{ 
                         this.state.data.map((doctor) => { 
-                            return <option key={doctor.id}>{doctor.firstName}</option>
+                            return <option value={doctor.id} key={doctor.id}>{doctor.firstName}</option>
                         })
                     }</select>
                 <div>
-                    <ul>{this.state.data.firstName}</ul>
-                    <ul>{this.state.data.lastName}</ul>
-                    <ul>{this.state.data.area}</ul>
-                    <ul>{this.state.data.number}</ul>
-                    <ul>{this.state.data.specialty}</ul>
+                    <ul>First Name: {this.state.data.firstName}</ul>
+                    <ul>Last Name: {this.state.data.lastName}</ul>
+                    <ul>Area Code: {this.state.data.area}</ul>
+                    <ul>Phone Number: {this.state.data.number}</ul>
+                    <ul>Expertise: {this.state.data.specialty}</ul>
                 </div>
             </div>
         )
