@@ -11,11 +11,11 @@ export default class Doctor extends React.Component {
     }
     
     componentDidMount() {
-        fetch('./../doctor.json')
-        .then(response => (response.json()))
+        fetch('/doctor.json')
+        .then(response => response.json())
         .then(data => {
-            alert(data.doctors)
-            this.setState({ data: data.doctors })
+            console.log(data)
+            this.setState({ data: data })
         })
         .catch(error => console.log(error));
     }
