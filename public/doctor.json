@@ -1,45 +1,56 @@
 [
     {
-        "id": "1",
+        "id": 1,
         "firstName": "John",
-        "listName": "Smith",
+        "lastName": "Smith",
         "area": "95032",
-        "number": "4335123314",
+        "number": "(433) 512-3314",
+        "rating": "4.3/5.0",
         "specialty": "Heart"
     },
     {
+        "id": 2,
         "firstName": "Bob",
-        "listName": "Joe",
+        "lastName": "Joe",
         "area": "95512",
-        "number": "4980234028",
+        "number": "(498) 123-4028",
+        "rating": "3.3/5.0",
         "specialty": "Lung"
     },
     {
+        "id": 3,
         "firstName": "Smith",
-        "listName": "Johnson",
+        "lastName": "Johnson",
         "area": "80956",
-        "number": "5096310948",
+        "number": "(509) 631-0948",
+        "rating": "4.7/5.0",
         "specialty": "Liver"
     },
     {
+        "id": 4,
         "firstName": "David",
-        "listName": "Bobby",
+        "lastName": "Bobby",
         "area": "90634",
-        "number": "8084329483",
+        "number": "(808) 432-9483",
+        "rating": "3.9/5.0",
         "specialty": "Eye"
     },
     {
+        "id": 5,
         "firstName": "Anthony",
-        "listName": "Brown",
+        "lastName": "Brown",
         "area": "70690",
-        "number": "8032469786",
+        "number": "(803) 246-9786",
+        "rating": "4.0/5.0",
         "specialty": "Heart"
     },
     {
+        "id": 6,
         "firstName": "Tony",
-        "listName": "Smith",
+        "lastName": "Smith",
         "area": "80996",
-        "number": "8322534969",
+        "number": "(832) 253-4969",
+        "rating": "3.3/5.0",
         "specialty": "Lung"
     }
         
