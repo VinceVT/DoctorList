@@ -34,9 +34,9 @@ export default class Doctor extends React.Component {
     render() {
         return (
             <div>
-                <select onChange={this.handleChange}>{ 
+                <select value={this.state.selected} onChange={this.handleChange}>{ 
                         this.state.data.map((doctor) => { 
-                            return <option value={doctor.id} key={doctor.id}>{doctor.firstName}</option>
+                            return <option value={doctor.id} key={doctor.id}>{doctor.firstName + " " + doctor.lastName}</option>
                         })
                     }</select>
                 <div>
