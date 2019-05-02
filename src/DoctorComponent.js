@@ -16,7 +16,7 @@ export default class Doctor extends React.Component {
     }
 
     fetchDoctor = async () => {
-        const data = await fetch('/doctor.json')
+        const data = await fetch('doctor.json')
             .then(response => response.json())
             .catch(error => console.log(error));
 
